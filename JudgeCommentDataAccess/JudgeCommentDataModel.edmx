@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProdArcEWIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="JudgeComment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="CaseNO" Type="varchar" MaxLength="50" />
+          <Property Name="WarrantNo" Type="varchar" MaxLength="200" />
+          <Property Name="FirstName" Type="varchar" MaxLength="30" />
+          <Property Name="LastName" Type="varchar" MaxLength="30" />
+          <Property Name="IssueDate" Type="datetime" />
+          <Property Name="IssueTime" Type="datetime" />
+          <Property Name="BondHearing" Type="varchar" MaxLength="6" />
+          <Property Name="Behavior" Type="varchar" MaxLength="8000" />
+          <Property Name="RightAdvised" Type="varchar" MaxLength="20" />
+          <Property Name="AdviseManner" Type="varchar" MaxLength="20" />
+          <Property Name="BondText" Type="varchar" MaxLength="50" />
+          <Property Name="BondDollar" Type="varchar" MaxLength="50" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="30" />
+          <Property Name="AccusedNo" Type="varchar" MaxLength="10" />
+          <Property Name="AccusedName" Type="varchar" MaxLength="50" />
+          <Property Name="OffenseNo" Type="varchar" MaxLength="10" />
+          <Property Name="OffenseName" Type="varchar" MaxLength="100" />
+          <Property Name="OtherComments" Type="varchar" MaxLength="1000" />
+          <Property Name="Status" Type="varchar" MaxLength="30" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProbableCause" Type="varchar" MaxLength="5000" />
+          <Property Name="Review" Type="int" />
+          <Property Name="DenyReason" Type="varchar" MaxLength="2000" />
+          <Property Name="Location" Type="varchar" MaxLength="50" />
+          <Property Name="BondDollarOther" Type="varchar" MaxLength="100" />
+          <Property Name="BondDesc" Type="varchar" MaxLength="2000" />
+          <Property Name="QueuePrinting" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="ProdArcEWIModelStoreContainer">
+          <EntitySet Name="JudgeComment" EntityType="Self.JudgeComment" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProdArcEWIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="JudgeComment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="CaseNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WarrantNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IssueDate" Type="DateTime" Precision="3" />
+          <Property Name="IssueTime" Type="DateTime" Precision="3" />
+          <Property Name="BondHearing" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Behavior" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="RightAdvised" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AdviseManner" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="BondText" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BondDollar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AccusedNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AccusedName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OffenseNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="OffenseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OtherComments" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProbableCause" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="Review" Type="Int32" />
+          <Property Name="DenyReason" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BondDollarOther" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BondDesc" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="QueuePrinting" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="ProdArcEWIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="JudgeComments" EntityType="Self.JudgeComment" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProdArcEWIModelStoreContainer" CdmEntityContainer="ProdArcEWIEntities">
+          <EntitySetMapping Name="JudgeComments">
+            <EntityTypeMapping TypeName="ProdArcEWIModel.JudgeComment">
+              <MappingFragment StoreEntitySet="JudgeComment">
+                <ScalarProperty Name="CaseNO" ColumnName="CaseNO" />
+                <ScalarProperty Name="WarrantNo" ColumnName="WarrantNo" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="IssueTime" ColumnName="IssueTime" />
+                <ScalarProperty Name="BondHearing" ColumnName="BondHearing" />
+                <ScalarProperty Name="Behavior" ColumnName="Behavior" />
+                <ScalarProperty Name="RightAdvised" ColumnName="RightAdvised" />
+                <ScalarProperty Name="AdviseManner" ColumnName="AdviseManner" />
+                <ScalarProperty Name="BondText" ColumnName="BondText" />
+                <ScalarProperty Name="BondDollar" ColumnName="BondDollar" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="AccusedNo" ColumnName="AccusedNo" />
+                <ScalarProperty Name="AccusedName" ColumnName="AccusedName" />
+                <ScalarProperty Name="OffenseNo" ColumnName="OffenseNo" />
+                <ScalarProperty Name="OffenseName" ColumnName="OffenseName" />
+                <ScalarProperty Name="OtherComments" ColumnName="OtherComments" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProbableCause" ColumnName="ProbableCause" />
+                <ScalarProperty Name="Review" ColumnName="Review" />
+                <ScalarProperty Name="DenyReason" ColumnName="DenyReason" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="BondDollarOther" ColumnName="BondDollarOther" />
+                <ScalarProperty Name="BondDesc" ColumnName="BondDesc" />
+                <ScalarProperty Name="QueuePrinting" ColumnName="QueuePrinting" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

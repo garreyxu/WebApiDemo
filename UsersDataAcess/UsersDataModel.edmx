@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProdArcEWIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ProdArcEWI.dbo.Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LoginID" Type="varchar" MaxLength="30" />
+          <Property Name="Password" Type="varchar" MaxLength="250" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="Street" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+          <Property Name="Zip" Type="varchar" MaxLength="50" />
+          <Property Name="HomePhone" Type="varchar" MaxLength="55" />
+          <Property Name="WorkPhone" Type="varchar" MaxLength="50" />
+          <Property Name="Fax" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Agency" Type="varchar" MaxLength="250" />
+          <Property Name="UserRoleID" Type="int" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="PasswordExpiryDate" Type="datetime" />
+          <Property Name="Division" Type="varchar" MaxLength="100" />
+          <Property Name="AccessLevel" Type="int" />
+          <Property Name="UserActive" Type="int" />
+          <Property Name="AgencyActive" Type="int" />
+          <Property Name="OfficialTitle" Type="varchar" MaxLength="50" />
+          <Property Name="CellPhone" Type="varchar" MaxLength="30" />
+          <Property Name="CheckFirstTimeLogin" Type="bit" />
+          <Property Name="BadgeNo" Type="varchar" MaxLength="100" />
+          <Property Name="WarrantLocation" Type="varchar" MaxLength="150" />
+          <Property Name="JacketNo" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="ProdArcEWIModelStoreContainer">
+          <EntitySet Name="Users" EntityType="Self.Users" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Users].[UserID] AS [UserID], 
+    [Users].[LoginID] AS [LoginID], 
+    [Users].[Password] AS [Password], 
+    [Users].[FirstName] AS [FirstName], 
+    [Users].[MiddleName] AS [MiddleName], 
+    [Users].[LastName] AS [LastName], 
+    [Users].[Street] AS [Street], 
+    [Users].[City] AS [City], 
+    [Users].[State] AS [State], 
+    [Users].[Zip] AS [Zip], 
+    [Users].[HomePhone] AS [HomePhone], 
+    [Users].[WorkPhone] AS [WorkPhone], 
+    [Users].[Fax] AS [Fax], 
+    [Users].[Email] AS [Email], 
+    [Users].[Agency] AS [Agency], 
+    [Users].[UserRoleID] AS [UserRoleID], 
+    [Users].[EntryDate] AS [EntryDate], 
+    [Users].[PasswordExpiryDate] AS [PasswordExpiryDate], 
+    [Users].[Division] AS [Division], 
+    [Users].[AccessLevel] AS [AccessLevel], 
+    [Users].[UserActive] AS [UserActive], 
+    [Users].[AgencyActive] AS [AgencyActive], 
+    [Users].[OfficialTitle] AS [OfficialTitle], 
+    [Users].[CellPhone] AS [CellPhone], 
+    [Users].[CheckFirstTimeLogin] AS [CheckFirstTimeLogin], 
+    [Users].[BadgeNo] AS [BadgeNo], 
+    [Users].[WarrantLocation] AS [WarrantLocation], 
+    [Users].[JacketNo] AS [JacketNo], 
+    [Users].[CreatedBy] AS [CreatedBy], 
+    [Users].[CreatedDate] AS [CreatedDate], 
+    [Users].[ModifiedBy] AS [ModifiedBy], 
+    [Users].[ModifiedDate] AS [ModifiedDate]
+    FROM [dbo].[Users] AS [Users]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProdArcEWIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LoginID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HomePhone" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="WorkPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Agency" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UserRoleID" Type="Int32" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordExpiryDate" Type="DateTime" Precision="3" />
+          <Property Name="Division" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AccessLevel" Type="Int32" />
+          <Property Name="UserActive" Type="Int32" />
+          <Property Name="AgencyActive" Type="Int32" />
+          <Property Name="OfficialTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CellPhone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CheckFirstTimeLogin" Type="Boolean" />
+          <Property Name="BadgeNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WarrantLocation" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="JacketNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="ProdArcEWIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Self.User" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProdArcEWIModelStoreContainer" CdmEntityContainer="ProdArcEWIEntities">
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ProdArcEWIModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Agency" ColumnName="Agency" />
+                <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="PasswordExpiryDate" ColumnName="PasswordExpiryDate" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+                <ScalarProperty Name="UserActive" ColumnName="UserActive" />
+                <ScalarProperty Name="AgencyActive" ColumnName="AgencyActive" />
+                <ScalarProperty Name="OfficialTitle" ColumnName="OfficialTitle" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="CheckFirstTimeLogin" ColumnName="CheckFirstTimeLogin" />
+                <ScalarProperty Name="BadgeNo" ColumnName="BadgeNo" />
+                <ScalarProperty Name="WarrantLocation" ColumnName="WarrantLocation" />
+                <ScalarProperty Name="JacketNo" ColumnName="JacketNo" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
