@@ -16,35 +16,8 @@ namespace UsersDataAccess
     {
         public int UserID { get; set; }
         public string LoginID { get; set; }
-        public string Password { get; set; }
         public string FirstName { get; set; }
-        public string MiddleName { get; set; }
         public string LastName { get; set; }
-        public string Street { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public string Zip { get; set; }
-        public string HomePhone { get; set; }
-        public string WorkPhone { get; set; }
-        public string Fax { get; set; }
-        public string Email { get; set; }
-        public string Agency { get; set; }
-        public Nullable<int> UserRoleID { get; set; }
-        public Nullable<System.DateTime> EntryDate { get; set; }
-        public Nullable<System.DateTime> PasswordExpiryDate { get; set; }
-        public string Division { get; set; }
-        public Nullable<int> AccessLevel { get; set; }
-        public Nullable<int> UserActive { get; set; }
-        public Nullable<int> AgencyActive { get; set; }
-        public string OfficialTitle { get; set; }
-        public string CellPhone { get; set; }
         public Nullable<bool> CheckFirstTimeLogin { get; set; }
-        public string BadgeNo { get; set; }
-        public string WarrantLocation { get; set; }
-        public string JacketNo { get; set; }
-        public Nullable<int> CreatedBy { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
-        public Nullable<int> ModifiedBy { get; set; }
-        public Nullable<System.DateTime> ModifiedDate { get; set; }
     }
 }

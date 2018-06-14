@@ -12,19 +12,19 @@ namespace UsersDataAccess
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
-    public partial class ProdArcEWIEntities : DbContext
+
+    public partial class UsersDbEntities : DbContext
     {
-        public ProdArcEWIEntities()
-            : base("name=ProdArcEWIEntities")
+        public UsersDbEntities()
+            : base("name=UsersDbEntities")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
         public virtual DbSet<User> Users { get; set; }
     }
 }

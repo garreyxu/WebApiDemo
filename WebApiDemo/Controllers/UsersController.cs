@@ -12,7 +12,7 @@ namespace WebApiDemo.Controllers
     {
         public IEnumerable<User> Get()
         {
-            using (ProdArcEWIEntities entities = new ProdArcEWIEntities())
+            using (UsersDbEntities entities = new UsersDbEntities())
             {
                 return entities.Users.ToList();
             }
@@ -20,7 +20,7 @@ namespace WebApiDemo.Controllers
 
         public User Get(int id)
         {
-            using (ProdArcEWIEntities entities = new ProdArcEWIEntities())
+            using (UsersDbEntities entities = new UsersDbEntities())
             {
                 return entities.Users.FirstOrDefault<User>(e => e.UserID == id);
             }
@@ -30,7 +30,7 @@ namespace WebApiDemo.Controllers
         {
             try
             {
-                using (ProdArcEWIEntities entities = new ProdArcEWIEntities())
+                using (UsersDbEntities entities = new UsersDbEntities())
                 {
                     entities.Users.Add(user);
                     entities.SaveChanges();
@@ -50,7 +50,7 @@ namespace WebApiDemo.Controllers
         {
             try
             {
-                using (ProdArcEWIEntities entities = new ProdArcEWIEntities())
+                using (UsersDbEntities entities = new UsersDbEntities())
                 {
                     var entity = entities.Users.FirstOrDefault(e => e.UserID == id);
                     if (entity == null)
@@ -75,7 +75,7 @@ namespace WebApiDemo.Controllers
         {
             try
             {
-                using (ProdArcEWIEntities entities = new ProdArcEWIEntities())
+                using (UsersDbEntities entities = new UsersDbEntities())
                 {
                     var entity = entities.Users.FirstOrDefault(e => e.UserID == id);
                     if (entity == null)
@@ -84,36 +84,11 @@ namespace WebApiDemo.Controllers
                     }
                     else
                     {
-                        entity.AccessLevel = user.AccessLevel;
-                        entity.Agency = user.Agency;
-                        entity.AgencyActive = user.AgencyActive;
-                        entity.BadgeNo = user.BadgeNo;
-                        entity.CellPhone = user.CellPhone;
-                        entity.CheckFirstTimeLogin = user.CheckFirstTimeLogin;
-                        entity.City = user.City;
-                        entity.CreatedBy = user.CreatedBy;
-                        entity.CreatedDate = user.CreatedDate;
-                        entity.Division = user.Division;
-                        entity.Email = user.Email;
-                        entity.EntryDate = user.EntryDate;
-                        entity.FirstName = user.FirstName;
-                        entity.HomePhone = user.HomePhone;
-                        entity.JacketNo = user.JacketNo;
-                        entity.LastName = user.LastName;
                         entity.LoginID = user.LoginID;
-                        entity.MiddleName = user.MiddleName;
-                        entity.ModifiedBy = user.ModifiedBy;
-                        entity.ModifiedDate = user.ModifiedDate;
-                        entity.OfficialTitle = user.OfficialTitle;
-                        entity.Password = user.Password;
-                        entity.PasswordExpiryDate = user.PasswordExpiryDate;
-                        entity.State = user.State;
-                        entity.Street = user.Street;
-                        entity.UserActive = user.UserActive;
-                        entity.UserRoleID = user.UserRoleID;
-                        entity.WarrantLocation = user.WarrantLocation;
-                        entity.WorkPhone = user.WorkPhone;
-                        entity.Zip = user.Zip;
+                        entity.FirstName = user.FirstName;
+                        entity.LastName = user.LastName;
+                        entity.CheckFirstTimeLogin = user.CheckFirstTimeLogin;
+
                         entities.SaveChanges();
 
                         return Request.CreateResponse(HttpStatusCode.OK, entity);
@@ -125,7 +100,5 @@ namespace WebApiDemo.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
-
-
     }
 }
